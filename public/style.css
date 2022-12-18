@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 header {
@@ -22,6 +23,9 @@ header {
   color: #FF6060;
   text-decoration: none;
 }
+.header__link--underlined {
+  text-decoration: underline;
+}
 
 footer {
   display: flex;
@@ -41,6 +45,7 @@ footer {
   width: 1240px;
   height: 223px;
   border-radius: 25px;
+  opacity: 0.3;
 }
 .banner__text {
   position: absolute;
@@ -137,5 +142,3 @@ footer {
   font-size: 18px;
   color: #FF6060;
 }
-
-/*# sourceMappingURL=style.css.map */
