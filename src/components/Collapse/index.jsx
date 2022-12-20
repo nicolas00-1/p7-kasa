@@ -20,3 +20,4 @@ function Collapse ({label, description}) {
 }
 
 export default Collapse 
+

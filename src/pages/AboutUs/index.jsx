@@ -2,6 +2,7 @@ import Collapse from "../../components/Collapse";
 import Banner from "../../components/Banner";
 import banner_aboutus from "../../assets/banner_aboutus.png"
 
+
 const aboutUsDatas =[
     {
         id: 1,

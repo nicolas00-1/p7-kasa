@@ -7,4 +7,5 @@ function Card ({title,picture}) {
     )
 }
 
+
 export default Card

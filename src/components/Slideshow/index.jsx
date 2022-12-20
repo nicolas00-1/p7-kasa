@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
 function Slideshow(photosArray) {
     const numberOfphotos = photosArray.length()
     const firstPhoto = photosArray[0]
@@ -42,5 +43,6 @@ function Slideshow(photosArray) {
         </div>
     )
 }
+
 
 export default Slideshow

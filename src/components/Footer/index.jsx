@@ -1,5 +1,6 @@
 import whiteLogo from '../../assets/whiteLogo.png'
 
+
 function Footer () {
     return (
         <footer>
