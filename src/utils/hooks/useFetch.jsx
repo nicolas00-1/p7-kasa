@@ -1,13 +1,11 @@
 import { useState } from "react"
 import { useEffect } from "react"
 
-
 function useFetch (url) {
     const [datas, setDatas] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-
-    useEffect(function () {
-        (async function () {
+    useEffect(() => {
+        async function fetchDatas() {
             setIsLoading(true)
             const response = await fetch(url)
             const responseData = await response.json()
@@ -17,9 +15,9 @@ function useFetch (url) {
             } else {
                 console.log("===")
             }
-        })()
+        }   
+        fetchDatas()
     },[url])
-
     return {datas, isLoading}
 }
 

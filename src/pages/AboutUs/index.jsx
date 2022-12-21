@@ -28,17 +28,19 @@ const aboutUsDatas =[
 
 function AboutUs () {
     return (
-        <div>
+        <div className="aboutus">
             <Banner 
                 picture={banner_aboutus}
             />
-            {aboutUsDatas.map((section) => (
-                <Collapse 
-                    key={section.id}
-                    label={section.label}
-                    description={section.description}
-                />
-            ))}
+            <div className="aboutus__collapses">
+                {aboutUsDatas.map((section) => (
+                    <Collapse 
+                        key={section.id}
+                        label={section.label}
+                        description={section.description}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
