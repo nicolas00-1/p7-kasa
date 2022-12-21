@@ -1,0 +1,32 @@
+.card {
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    margin: 20px;
+    &__image {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 10px;
+    }
+    &__title {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        color: white;
+    }
+}
+
+.home__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $color-background;
+    border-radius: 25px;
+}

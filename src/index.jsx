@@ -6,6 +6,7 @@ import Lodging from './pages/Lodging'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './components/Error'
+import "./style/css/style.css"
 import {
   BrowserRouter as Router,
   Routes,

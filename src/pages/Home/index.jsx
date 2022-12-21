@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import banner from "../../assets/banner.png"
 
 function Home () {
-    const {datas, isLoading} = useFetch(`./logements.json`)
+    const {datas, isLoading} = useFetch("./logements.json")
     const lodgingDatas = datas
     console.log(datas)
     return (

@@ -1,17 +1,46 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 
 function Header () {
+    const [className, setClassName] = useState({
+        home: "header__link linkActive",
+        aboutus: "header__link"
+    })
+    const pathname = useLocation().pathname
+
+    useEffect(()=> {
+            if (pathname==="/") {
+                setClassName({
+                    home: "header__link linkActive",
+                    aboutus: "header__link"
+                })
+            } else if (pathname==="/aboutus") {
+                setClassName({
+                    home: "header__link",
+                    aboutus: "header__link linkActive"
+                })
+            } else {
+                setClassName({
+                    home: "header__link",
+                    aboutus: "header__link"
+                })
+            }
+        },[pathname]
+    )
+
     return (
         <header>
             <img src={logo} alt="logo" className='header__logo'/>
             <nav>
-                <Link to="/" className="header__link">Acceuil</Link>
-                <Link to="/aboutus" className="header__link">A propos</Link>
+                <Link to="/" className={className.home}>Acceuil</Link>
+                <Link to="/aboutus" className={className.aboutus}>A propos</Link>
             </nav>
         </header>
     )
 }
+
 
 export default Header

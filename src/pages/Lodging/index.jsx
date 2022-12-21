@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom"
 import Slideshow from "../../components/Slideshow"
-import useFetch from "../../utils/hooks/useFetch"
 import Collapse from "../../components/Collapse"
 import Rating from "../../components/Rating"
-
+const lodgingDatas = require("../../logements.json")
 
 function getLodgingWithId (lodgingDatas, lodgingId) {
     for (let lodging of lodgingDatas) {
@@ -14,19 +13,25 @@ function getLodgingWithId (lodgingDatas, lodgingId) {
     }
 }
 
+function getHTMLLinesWithArray (array) {
+    const newArray =[]
+    for (let element of array) {
+        newArray.push(<p>{element}</p>)
+    }
+    return newArray
+}
 
 function Lodging () { 
-    const {datas, isLoading} = useFetch("/logements.json")
     const {lodgingId} = useParams()
-    const lodgingDatas = datas
     const lodging = getLodgingWithId(lodgingDatas, lodgingId)
+    const lodgingEquipment = getHTMLLinesWithArray(lodging.equipments)
 
     return (
         <div className="lodging"> 
             <Slideshow photosArray={lodging.pictures} />
             <div className="lodging__informations">
                 <div className="lodging__informations__lodging">
-                    <div className="loding__informations__lodging__title">{lodging.title}</div>
+                    <div className="lodging__informations__lodging__title">{lodging.title}</div>
                     <div className="lodging__informations__lodging__location">{lodging.location}</div>
                     <ul className="lodging__informations__lodging__tags">
                         {lodging.tags.map((tag)=>(
@@ -44,8 +49,10 @@ function Lodging () {
                     <Rating rate={parseInt(lodging.rating)} />
                 </div>
             </div>
-            <Collapse label="Description" description={lodging.description}/>
-            <Collapse label="Equipements" description={lodging.equippments}/>
+            <div className="lodging__collapses">
+                <div className ="lodging__collapses__collapse"><Collapse label="Description" description={lodging.description}/></div>
+                <div className ="lodging__collapses__collapse"><Collapse label="Equipements" description={lodgingEquipment}/></div>
+            </div>
         </div>
     )
 }

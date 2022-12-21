@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+}
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -11,6 +15,7 @@ header {
   margin: auto;
   margin-bottom: 50px;
   margin-top: 50px;
+  font-size: 24px;
 }
 
 .header__logo {
@@ -24,6 +29,10 @@ header {
   text-decoration: none;
 }
 .header__link--underlined {
+  text-decoration: underline;
+}
+
+.linkActive {
   text-decoration: underline;
 }
 
@@ -133,6 +142,49 @@ footer {
   border-radius: 5px;
 }
 
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.slideshow__image {
+  width: 100%;
+  height: 415px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.slideshow__image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.slideshow__arrowsLeft {
+  position: absolute;
+  left: 5px;
+}
+.slideshow__arrowsRight {
+  position: absolute;
+  right: 5px;
+}
+.slideshow__bulletpoint {
+  position: absolute;
+  left: 49%;
+  font-size: 18px;
+  bottom: 5px;
+  color: white;
+}
+
+.arrow {
+  top: 40%;
+  font-size: 100px;
+  color: white;
+}
+.arrow:hover {
+  cursor: pointer;
+}
+
 .error {
   display: flex;
   flex-direction: column;
@@ -162,3 +214,85 @@ footer {
   width: 80%;
   margin: auto;
 }
+
+.lodging {
+  width: 80%;
+  margin: auto;
+}
+.lodging__informations {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  color: #FF6060;
+  padding-bottom: 20px;
+}
+.lodging__informations__lodging {
+  display: flex;
+  flex-direction: column;
+}
+.lodging__informations__lodging__title {
+  font-weight: 500;
+  font-size: 36px;
+  padding-bottom: 15px;
+}
+.lodging__informations__lodging__location {
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+.lodging__informations__lodging__tags {
+  display: flex;
+  padding: 0px;
+}
+.lodging__informations__lodging__tags__tag {
+  background-color: #FF6060;
+  list-style: none;
+  color: white;
+  padding: 3px 20px 3px 20px;
+  margin-right: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.lodging__informations__hostAndRate {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lodging__informations__hostAndRate__host {
+  display: flex;
+  align-items: center;
+}
+.lodging__informations__hostAndRate__host__name {
+  font-size: 18px;
+  padding-right: 10px;
+}
+.lodging__informations__hostAndRate__host__picture {
+  border-radius: 50%;
+  width: 64px;
+}
+.lodging__informations__hostAndRate__host__picture img {
+  border-radius: 50%;
+  width: 64px;
+}
+.lodging__collapses {
+  display: flex;
+  justify-content: space-between;
+}
+.lodging__collapses__collapse {
+  width: 48%;
+}
+.lodging__collapses__collapse p {
+  margin: 0;
+  padding: 5px;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+}
+.rating__greyStar {
+  color: #E3E3E3;
+}
+
+/*# sourceMappingURL=style.css.map */
